@@ -5,8 +5,14 @@ package com.giuseppesorce.databinding.models;
  */
 public class FieldForm {
 
-    public final String name="Nome";
-    public final String surname="Cognome";
-    public final String address="Indirizzo";
+    public  String name;
+    public  String surname;
+    public  String address;
 
+
+    public FieldForm(String name, String surname, String address) {
+        this.name= name;
+        this.surname= surname;
+        this.address= address;
+    }
 }

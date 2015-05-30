@@ -6,15 +6,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.giuseppesorce.databinding.models.FieldForm;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
-        User user = new User("Test", "User");
-        binding.setUser(user);
+        setContentView(R.layout.main_activity);
+    //    ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+        FieldForm form = new FieldForm("Nome", "Cognome", "Indirizzo");
+       // binding.setForm(form);
     }
 
     @Override
