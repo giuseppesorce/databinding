@@ -1,22 +1,26 @@
 package com.giuseppesorce.databinding;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.giuseppesorce.databinding.databinding.MainActivityBinding;
 import com.giuseppesorce.databinding.models.FieldForm;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-    //    ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         FieldForm form = new FieldForm("Nome", "Cognome", "Indirizzo");
-       // binding.setForm(form);
+      binding.setFieldForm(form);
     }
 
     @Override
