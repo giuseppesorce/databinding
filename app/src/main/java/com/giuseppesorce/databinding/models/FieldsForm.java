@@ -15,17 +15,22 @@
  */
 package com.giuseppesorce.databinding.models;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.giuseppesorce.databinding.BR;
+
 /**
  * @author Giuseppe Sorce
  */
-public class FieldsForm {
+public class FieldsForm extends BaseObservable{
 
-    public String name;
-    public String surname;
-    public String address;
-    public String message;
-    public String buttonSend;
-    public boolean hasmessage;
+    private String name;
+    private String surname;
+    private String address;
+    private String message;
+    private String buttonSend;
+    private boolean hasmessage;
 
 
     public FieldsForm(String name, String surname, String address, String message, String send, boolean hasmessage) {
@@ -35,5 +40,56 @@ public class FieldsForm {
         this.message = message;
         this.buttonSend = send;
         this.hasmessage = hasmessage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getButtonSend() {
+        return buttonSend;
+    }
+
+    public void setButtonSend(String buttonSend) {
+        this.buttonSend = buttonSend;
+    }
+
+
+    @Bindable
+    public boolean isHasmessage() {
+        return hasmessage;
+    }
+
+    public void setHasmessage(boolean bmessage) {
+        this.hasmessage = bmessage;
+        notifyPropertyChanged(BR.hasmessage);
     }
 }
